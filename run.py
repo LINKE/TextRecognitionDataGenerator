@@ -36,7 +36,7 @@ def parse_arguments():
         type=str,
         nargs="?",
         help="The language to use, should be fr (Français), en (English), es (Español), or de (Deutsch).",
-        default="en"
+        default="zh" #"en"
     )
     parser.add_argument(
         "-c",
@@ -44,7 +44,7 @@ def parse_arguments():
         type=int,
         nargs="?",
         help="The number of images to be created.",
-        default=1000
+        default=100 #1000
     )
     parser.add_argument(
         "-n",
@@ -66,7 +66,7 @@ def parse_arguments():
         type=int,
         nargs="?",
         help="Define how many words should be included in each generated sample. If the text source is Wikipedia, this is the MINIMUM length",
-        default=1
+        default=1 #1
     )
     parser.add_argument(
         "-r",
@@ -105,14 +105,14 @@ def parse_arguments():
         type=int,
         nargs="?",
         help="Define skewing angle of the generated text. In positive degrees",
-        default=0,
+        default=0, #0-12
     )
     parser.add_argument(
         "-rk",
         "--random_skew",
         action="store_true",
         help="When set, the skew angle will be randomized between the value set with -k and it's opposite",
-        default=False,
+        default=True, #False
     )
     parser.add_argument(
         "-wk",
@@ -127,14 +127,14 @@ def parse_arguments():
         type=int,
         nargs="?",
         help="Apply gaussian blur to the resulting sample. Should be an integer defining the blur radius",
-        default=0,
+        default=0, #0,1
     )
     parser.add_argument(
         "-rbl",
         "--random_blur",
         action="store_true",
         help="When set, the blur radius will be randomized between 0 and -bl.",
-        default=False,
+        default=False
     )
 
     parser.add_argument(
