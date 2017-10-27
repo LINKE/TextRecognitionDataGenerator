@@ -46,8 +46,14 @@ def get_chinese_simplified():
     return [chr(c) for c in range(0x4e00, 0x9fbf + 1 - 26)]
 
 
+def get_chinese_gb3755():
+    with open(os.path.join('data', 'chinese_gb3755.txt'), 'r') as f:
+        charset = f.read().splitlines()
+    return charset
+
+
 def get_chinese_traditional():
-    pass
+    return []
 
 
 def get_chinese_pinyin(str=None, uppercase=False):
@@ -58,8 +64,12 @@ def get_chinese_pinyin(str=None, uppercase=False):
     :param uppercase:
     :return:
     '''
-    if str == None: str = ''.join(get_chinese_simplified())
+    if str == None: str = ''.join(get_chinese_gb3755())
     pys = lazy_pinyin(str)
+    # import re
+    # r = re.compile(r'^[a-zA-Z]')
+    # for ch in pys:
+    #     if r.match(ch) == None: print(pys.index(ch), ch)
     return [ch.upper() for ch in pys] if uppercase else pys
 
 
@@ -180,7 +190,7 @@ def main():
     # gen_word_pinyin_upper('word_pinyin_upper.txt')
 
     # gen_word_document('word_document.txt')
-    gen_word_sequence('word_sequence.txt')
+    # gen_word_sequence('word_sequence.txt')
     # gen_word_date('word_date.txt')
 
     #

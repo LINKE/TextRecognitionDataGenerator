@@ -425,7 +425,7 @@ def main():
             'blur': [0, 1],
             'bg': [0, 1, 2]
         },
-        {   #20902
+        {   #3755
             'dict': 'word_pinyin_upper',
             'choice': False,
             'font': [], #random
@@ -457,9 +457,9 @@ def main():
             'blur': [0, 1],
             'bg':   [0, 1, 2]
         }
-    ][6:6]
+    ][3:4]
     print(tasks)
-    # return
+    return
 
     base_dir = 'out2'
     log_file = open(os.path.join(base_dir, 'log.txt'), 'w')
